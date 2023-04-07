@@ -12,7 +12,7 @@ class LoadActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_load)
 
-        var intent = Intent(this,LoginActivity::class.java)
+        var intent = Intent(this,PortafolioActivity::class.java)
         val loader:Loader = Loader(intent,this);
 
         var tasker:Timer = Timer()
