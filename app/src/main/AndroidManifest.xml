@@ -12,6 +12,14 @@
         android:theme="@style/Theme.MunoApp"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_main2" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main" />
+        <activity
             android:name=".PortafolioActivity"
             android:exported="false" />
         <activity

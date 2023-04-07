@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_tareas">
+
+    <fragment
+        android:id="@+id/navigation_tareas"
+        android:name="com.proyecto.munoapp.ui.tarea.TareaFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_proyecto" />
+
+    <fragment
+        android:id="@+id/navigation_proyecto"
+        android:name="com.proyecto.munoapp.ui.proyecto.ProyectoFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_proyecto" />
+
+    <fragment
+        android:id="@+id/navigation_mensaje"
+        android:name="com.proyecto.munoapp.ui.mensaje.MensajeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_proyecto" />
+
+    <fragment
+        android:id="@+id/navigation_notificacion"
+        android:name="com.proyecto.munoapp.ui.notificacion.NotificacionFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_proyecto" />
+
+    <fragment
+        android:id="@+id/navigation_almacenamiento"
+        android:name="com.proyecto.munoapp.ui.almacenamiento.AlmacenamientoFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_proyecto" />
+
+</navigation>
