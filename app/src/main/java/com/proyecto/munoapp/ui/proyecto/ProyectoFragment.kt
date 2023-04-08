@@ -1,5 +1,6 @@
 package com.proyecto.munoapp.ui.proyecto
 
+import android.app.AlertDialog
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,8 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Button
 import android.widget.GridView
 import android.widget.TextView
+import androidx.lifecycle.ViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.proyecto.munoapp.R
 import com.proyecto.munoapp.databinding.FragmentProyectoBinding
 import com.proyecto.munoapp.model.ProyectoItem
@@ -36,7 +40,19 @@ class ProyectoFragment : Fragment() {
 
         val gridProyecto: GridView = binding.gridProyecto
 
-        gridProyecto.adapter = cargar(root.context)
+
+
+
+        gridProyecto.adapter = cargar(root.context,proyectoViewModel)
+
+
+        var buttonAdd:FloatingActionButton = _binding!!.buttonAdd
+
+        buttonAdd.setOnClickListener {
+            val proyectoDialog = ProyectoDialog(root.context)
+            proyectoDialog.show(parentFragmentManager,"ProyectoDialog")
+        }
+
         return root
 
 
@@ -48,24 +64,15 @@ class ProyectoFragment : Fragment() {
         _binding = null
     }
 
-    private fun cargar(context: Context):ProyectoAdapter{
+    private fun cargar(context: Context, view:ProyectoViewModel):ProyectoAdapter{
 
-        var items:ArrayList<ProyectoItem> = ArrayList()
+        var items: ArrayList<ProyectoItem>? = view.getProyects().value as ArrayList<ProyectoItem>
 
-        items.add(ProyectoItem("Proyecto 1","descripcion proyecto 1",1))
-        items.add(ProyectoItem("Proyecto 2","descripcion proyecto 2",1))
-        items.add(ProyectoItem("Proyecto 3","descripcion proyecto 3",1))
-        items.add(ProyectoItem("Proyecto 4","descripcion proyecto 4",1))
-        items.add(ProyectoItem("Proyecto 5","descripcion proyecto 5",1))
-        items.add(ProyectoItem("Proyecto 6","descripcion proyecto 6",1))
-        items.add(ProyectoItem("Proyecto 7","descripcion proyecto 7",1))
-        items.add(ProyectoItem("Proyecto 8","descripcion proyecto 8",1))
+        if(items!=null){
+            return ProyectoAdapter(context, items)
+        }
 
-
-
-
-        return ProyectoAdapter(context, items)
-
+       return ProyectoAdapter(context, ArrayList())
     }
 
     private class ProyectoAdapter: BaseAdapter{
