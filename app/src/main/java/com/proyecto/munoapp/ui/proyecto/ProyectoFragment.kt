@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.GridView
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.lifecycle.ViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -46,7 +47,7 @@ class ProyectoFragment : Fragment() {
         gridProyecto.adapter = cargar(root.context,proyectoViewModel)
 
 
-        var buttonAdd:FloatingActionButton = _binding!!.buttonAdd
+        var buttonAdd:ImageButton = _binding!!.buttonAdd
 
         buttonAdd.setOnClickListener {
             val proyectoDialog = ProyectoDialog(root.context)
