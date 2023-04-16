@@ -11,14 +11,22 @@
     android:paddingTop="10dp">
 
     <ImageButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/regresar_morado"
+        android:scaleType="centerCrop"
         />
 
     <TextView
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textFontWeight="600"
+
+        android:textSize="15sp"
+        android:textColor="@color/blue"
         android:text="Configuracion"/>
     <ImageView
         android:layout_marginTop="30dp"
@@ -30,6 +38,9 @@
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textFontWeight="800"
+        android:textColor="@color/violeta"
         android:text="Nombre  Apellido"/>
 
 
@@ -37,7 +48,11 @@
         android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="nombre de usuario"
+        android:textColor="@color/morado"
+        android:textStyle="italic"
+        android:textFontWeight="700"
+        android:textSize="13sp"
+        android:text="Nombre de usuario"
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,22 +65,28 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Nombre Apellido"
+            android:textColor="@color/black"
+            android:textFontWeight="500"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edit_nombre"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_nombre" />
 
         <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:rotation="180"
+            android:scaleType="centerCrop"
+            android:src="@drawable/regresar_morado"
             app:layout_constraintBottom_toTopOf="@+id/edit_nombre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -75,6 +96,9 @@
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/morado"
+        android:textStyle="italic"
+        android:textFontWeight="700"
         android:text="Correo Electronico"
         />
 
@@ -88,31 +112,41 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Nombre.apellido@gmail.com"
+            android:textColor="@color/black"
+            android:textFontWeight="500"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edit_correo"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_correo" />
 
         <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginEnd="10dp"
             app:layout_constraintBottom_toTopOf="@+id/edit_correo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/regresar_morado"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:rotation="180"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <TextView
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/morado"
+        android:textStyle="italic"
+        android:textFontWeight="700"
+        android:textSize="13sp"
         android:text="Teléfono"
         />
 
@@ -125,6 +159,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:textFontWeight="500"
             android:text="+52 642 117 6094"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -132,25 +168,33 @@
         <EditText
             android:id="@+id/edit_telefono"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_telefono" />
 
         <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginEnd="10dp"
             app:layout_constraintBottom_toTopOf="@+id/edit_telefono"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/regresar_morado"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:rotation="180"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <TextView
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/morado"
+        android:textStyle="italic"
+        android:textFontWeight="700"
+        android:textSize="13sp"
         android:text="Cambiar Contrasena"
         />
 
@@ -164,17 +208,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="* * * * * * * * "
+            android:textColor="@color/black"
+            android:textFontWeight="500"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
 
         <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/regresar_morado"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:rotation="180"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
