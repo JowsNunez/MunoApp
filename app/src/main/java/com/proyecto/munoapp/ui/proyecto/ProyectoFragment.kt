@@ -2,6 +2,7 @@ package com.proyecto.munoapp.ui.proyecto
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,6 +16,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.lifecycle.ViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.proyecto.munoapp.ActivityProyecto
 import com.proyecto.munoapp.R
 import com.proyecto.munoapp.databinding.FragmentProyectoBinding
 import com.proyecto.munoapp.model.ProyectoItem
@@ -107,6 +109,12 @@ class ProyectoFragment : Fragment() {
 
             var txtTitulo: TextView = vista.findViewById(R.id.proyect_titulo)
             var txtDescripcion: TextView = vista.findViewById(R.id.proyect_decripcion)
+            txtTitulo.setOnClickListener {
+                var intento = Intent(contexto, ActivityProyecto::class.java)
+                // TODO: agregar los detalles del proyecto seleccionado
+                contexto!!.startActivity(intento)
+            }
+
 
             txtTitulo.text=item.titulo
             txtDescripcion.text=item.decripcion
