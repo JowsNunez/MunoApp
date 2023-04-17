@@ -12,6 +12,7 @@ import android.widget.BaseAdapter
 import android.widget.CheckBox
 import android.widget.GridView
 import android.widget.TextView
+import android.widget.Toast
 import com.proyecto.munoapp.databinding.ActivityChecklistBinding
 import com.proyecto.munoapp.model.PendienteItem
 import com.proyecto.munoapp.model.ProyectoItem
@@ -24,9 +25,23 @@ class ChecklistActivity : AppCompatActivity() {
         binding = ActivityChecklistBinding.inflate(layoutInflater)
         setContentView(binding.root)
         var gvChecklist: GridView =binding.gvChecklist
+        var btnRegresar = binding.btnRegresarCheck
+
+        var btnBorrar = binding.btnBorrarChecklist
 
         gvChecklist.adapter=PendienteAdapter(this,cargarPendiente())
 
+        btnBorrar.setOnClickListener {
+            //TODO: crear funcionalidad de borrar
+
+            Toast.makeText(this,"TODO: crear funcion eliminar",Toast.LENGTH_SHORT).show()
+
+        }
+
+        btnRegresar.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+            finish()
+        }
     }
 
     fun cargarPendiente():ArrayList<PendienteItem>{

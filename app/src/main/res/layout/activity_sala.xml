@@ -6,13 +6,86 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MiembrosActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/fondo_textura_violeta_1"
+        android:layout_gravity="center_horizontal">
+        <ImageButton
+            android:id="@+id/btn_regresar_sala"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/transparent"
+            android:src="@drawable/regresar_blanco"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:textFontWeight="700"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="Proyecto Nombre"/>
+
+        <ImageButton
+            android:id="@+id/btn_iniciar_video"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="40dp"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:src="@drawable/videollamada_icon"/>
+        <ImageButton
+            android:id="@+id/btn_iniciar_llamada"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/transparent"
+            android:src="@drawable/llamada_icon"/>
+
+    </LinearLayout>
 
     <TextView
+        android:id="@+id/text_editar_actividad"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Miembros" />
+        android:text="Editar actividad"
+        android:padding="5dp"
+        android:layout_gravity="right"
+        android:textColor="@color/blue"
+        />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/morado"
+        android:text="Dentro de sala de Reunión"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_marginStart="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Conectado: " />
 
     <androidx.cardview.widget.CardView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"

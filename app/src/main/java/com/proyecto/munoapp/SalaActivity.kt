@@ -12,6 +12,7 @@ import android.widget.BaseAdapter
 import android.widget.CheckBox
 import android.widget.GridView
 import android.widget.TextView
+import android.widget.Toast
 import com.proyecto.munoapp.databinding.ActivitySalaBinding
 import com.proyecto.munoapp.model.MiembroItem
 import com.proyecto.munoapp.model.PendienteItem
@@ -25,7 +26,19 @@ class SalaActivity : AppCompatActivity() {
 
         var gvMiembros: GridView =binding.gvMiembros
 
-    gvMiembros.adapter=MiembroAdapter(this,cargarMiembro())
+        var txtActividad  =binding.textEditarActividad
+        var btnRegresar  =binding.btnRegresarSala
+
+        btnRegresar.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+            finish()
+        }
+
+        txtActividad.setOnClickListener {
+            Toast.makeText(this,"TODO: crear popup",Toast.LENGTH_SHORT).show()
+        }
+
+        gvMiembros.adapter=MiembroAdapter(this,cargarMiembro())
 
     }
 
