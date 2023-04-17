@@ -19,10 +19,17 @@ class ActivityProyecto : AppCompatActivity() {
 
         val btn_regresar = binding.btnRegresar
 
+        val ll_checkList=binding.llChecklist
+
         btn_config.setOnClickListener {
             var intent:Intent = Intent(this,ActivityConfigProyecto::class.java)
             startActivity(intent)
         }
+        ll_checkList.setOnClickListener{
+            val intent: Intent = Intent(this,ChecklistActivity::class.java)
+            startActivity(intent)
+        }
+
 
         //TODO funcionalidad de actividad.
 
