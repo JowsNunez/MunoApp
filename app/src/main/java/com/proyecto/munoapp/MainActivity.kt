@@ -42,7 +42,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         img.setOnClickListener {
-            Toast.makeText(this,"TODO:: abrir perfil",Toast.LENGTH_SHORT).show()
+            val intent: Intent = Intent(this, PerfilActivity::class.java)
+            startActivity(intent)
         }
 
         navView.setupWithNavController(navController)

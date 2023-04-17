@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.GridView
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ListView
@@ -20,6 +21,12 @@ class PortafolioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portafolio)
         var gridView:GridView = findViewById(R.id.portafolio_items)
+        var btn_regresar:ImageButton = findViewById(R.id.btn_regresar_portafolio)
+
+        btn_regresar.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+            finish()
+        }
 
 
         gridView.adapter=cargar()
