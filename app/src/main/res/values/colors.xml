@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#BDBDBD</color>
     <color name="blue">#4568dc</color>
+    <color name="violeta">#b06ab3</color>
+    <color name="morado">#8469c4</color>
+
 </resources>
