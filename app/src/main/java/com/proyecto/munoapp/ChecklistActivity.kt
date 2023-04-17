@@ -74,11 +74,7 @@ class ChecklistActivity : AppCompatActivity() {
 
             var txtTitulo: TextView = vista.findViewById(R.id.text_pendiente)
             var checkboxPendiente: CheckBox = vista.findViewById(R.id.checkbox_pendiente)
-            txtTitulo.setOnClickListener {
-                var intento = Intent(contexto, ActivityProyecto::class.java)
-                // TODO: agregar los detalles del proyecto seleccionado
-                contexto!!.startActivity(intento)
-            }
+
 
 
             txtTitulo.text=item.descripcion

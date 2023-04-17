@@ -87,6 +87,7 @@
             />
 
         <LinearLayout
+            android:id="@+id/ll_sala"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -102,9 +103,6 @@
                 android:layout_height="wrap_content"
                 android:text="Nuestra Sala de Reunion"
                 />
-
-
-
         </LinearLayout>
         <TextView
             android:id="@+id/txt_add_sala"

@@ -21,6 +21,10 @@ class ActivityProyecto : AppCompatActivity() {
 
         val ll_checkList=binding.llChecklist
 
+        val ll_sala=binding.llSala
+
+        // Listeners para abrir activities
+
         btn_config.setOnClickListener {
             var intent:Intent = Intent(this,ActivityConfigProyecto::class.java)
             startActivity(intent)
@@ -30,6 +34,10 @@ class ActivityProyecto : AppCompatActivity() {
             startActivity(intent)
         }
 
+        ll_sala.setOnClickListener{
+            val intent: Intent = Intent(this,SalaActivity::class.java)
+            startActivity(intent)
+        }
 
         //TODO funcionalidad de actividad.
 
