@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/dialog_round"
+    android:elevation="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/button_close_proyect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/back_arrow" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:labelFor="@+id/txt_nombre"
+            android:text="Nombre" />
+
+        <EditText
+            android:id="@+id/txt_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:labelFor="@+id/txt_descripcion"
+            android:text="Adjuntar" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_adjuntar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:maxHeight="300dp"
+            android:padding="3dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/txt_descripcion"
+                android:text="Nombre Archivo"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="140dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <ImageButton
+                android:id="@+id/adjuntar_archivo"
+                android:layout_width="93dp"
+                android:layout_height="93dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.238"
+                app:srcCompat="@drawable/adjuntar_xxxhdpi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/txt_descripcion"
+                android:text="Peso Mb"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="195dp"
+                tools:layout_editor_absoluteY="49dp" />
+
+            <Button
+                android:id="@+id/button_add_proyecto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:width="200dp"
+                android:radius="50dip"
+                android:text="Aceptar"
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="116dp"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</RelativeLayout>

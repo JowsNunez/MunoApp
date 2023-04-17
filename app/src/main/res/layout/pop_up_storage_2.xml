@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="249dp"
+    android:background="@drawable/dialog_round"
+    android:elevation="10dp"
+    android:orientation="vertical"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        >
+
+        <ImageView
+            android:id="@+id/fotografia_img"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            app:srcCompat="@drawable/tomar_foto"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="59dp" />
+
+
+        <Button
+            android:id="@+id/button_fotografia"
+            android:layout_width="232dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:background="@android:color/transparent"
+            android:text="Tomar Fotografia"
+            android:textColor="@color/gray"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.283"
+            app:layout_constraintStart_toEndOf="@+id/fotografia_img"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="59dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="42dp"
+            android:layout_height="41dp"
+            app:srcCompat="@drawable/escoger_galeria"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="113dp"
+
+            />
+
+        <Button
+            android:id="@+id/button_imagen"
+            android:layout_width="231dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="24dp"
+            android:background="@android:color/transparent"
+            android:text="Escoger de galeria"
+            android:textColor="@color/gray"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.194"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="112dp" />
+
+        <ImageView
+            android:id="@+id/archivo_img"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            app:srcCompat="@drawable/adjuntar_arichivo_redondo"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="6dp" />
+
+        <Button
+            android:id="@+id/button_archivo"
+            android:layout_width="289dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="58dp"
+            android:background="@android:color/transparent"
+            android:text="Ver almacenamiento interno"
+            android:textColor="@color/gray"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/fotografia_img"
+            app:layout_constraintStart_toStartOf="@+id/archivo_img"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="9dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
