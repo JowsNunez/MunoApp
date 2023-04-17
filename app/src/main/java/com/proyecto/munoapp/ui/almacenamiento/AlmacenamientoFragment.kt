@@ -34,6 +34,7 @@ class AlmacenamientoFragment : Fragment() {
         almacenamientoViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
         return root
     }
 

@@ -9,7 +9,7 @@
         android:id="@+id/navigation_tareas"
         android:name="com.proyecto.munoapp.ui.tarea.TareaFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_proyecto" />
+        tools:layout="@layout/fragment_tarea" />
 
     <fragment
         android:id="@+id/navigation_proyecto"
@@ -21,18 +21,18 @@
         android:id="@+id/navigation_mensaje"
         android:name="com.proyecto.munoapp.ui.mensaje.MensajeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_proyecto" />
+        tools:layout="@layout/fragment_mensaje" />
 
     <fragment
         android:id="@+id/navigation_notificacion"
         android:name="com.proyecto.munoapp.ui.notificacion.NotificacionFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_proyecto" />
+        tools:layout="@layout/fragment_notificacion" />
 
     <fragment
         android:id="@+id/navigation_almacenamiento"
         android:name="com.proyecto.munoapp.ui.almacenamiento.AlmacenamientoFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_proyecto" />
+        tools:layout="@layout/fragment_almacenamiento" />
 
 </navigation>
