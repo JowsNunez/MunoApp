@@ -38,7 +38,7 @@
             android:labelFor="@+id/txt_nombre"
             android:text="Nombre" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txt_nombre"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -111,6 +111,7 @@
                 tools:layout_editor_absoluteY="116dp"
                 tools:ignore="MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </LinearLayout>
 </RelativeLayout>
