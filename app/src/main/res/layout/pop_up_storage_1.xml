@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
@@ -13,6 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_gravity="center"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
@@ -23,7 +24,7 @@
         android:padding="10dp">
 
         <ImageButton
-            android:id="@+id/button_close_proyect"
+            android:id="@+id/button_close_adjuntar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -66,6 +67,7 @@
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="160dp">
@@ -100,18 +102,18 @@
                 tools:layout_editor_absoluteY="49dp" />
 
             <Button
-                android:id="@+id/button_add_proyecto"
+                android:id="@+id/button_add_archivo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:width="200dp"
                 android:radius="50dip"
                 android:text="Aceptar"
+                tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="35dp"
-                tools:layout_editor_absoluteY="116dp"
-                tools:ignore="MissingConstraints" />
+                tools:layout_editor_absoluteY="116dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
