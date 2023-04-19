@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:layout_marginTop="249dp"
+
+    android:background="@drawable/dialog_round"
+    android:elevation="10dp"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/archivo_img"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="70dp"
+            app:srcCompat="@drawable/adjuntar_arichivo_redondo"
+            />
+
+        <Button
+            android:id="@+id/button_archivo"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:background="@android:color/transparent"
+            android:text="Ver almacenamiento interno"
+            android:textColor="@color/gray"
+            android:textSize="13dp"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_marginStart="70dp"
+            android:id="@+id/fotografia_img"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            app:srcCompat="@drawable/tomar_foto"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/button_otros"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:text="Otros"
+            android:textColor="@color/gray"
+            android:textSize="13dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
