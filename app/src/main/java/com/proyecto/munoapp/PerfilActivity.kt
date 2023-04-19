@@ -18,6 +18,7 @@ class PerfilActivity : AppCompatActivity() {
 
         val buttonConfig = binding.btnConfiguracion
         var btn_regresar = binding.btnRegresarPerfil
+        var btn_amigos = binding.btnAmigos
 
 
 
@@ -28,6 +29,11 @@ class PerfilActivity : AppCompatActivity() {
 
         buttonConfig.setOnClickListener{
             val intent: Intent = Intent(this, ConfigActivity::class.java)
+            startActivity(intent)
+        }
+
+        btn_amigos.setOnClickListener {
+            val intent = Intent(this, ActivityMensajes::class.java)
             startActivity(intent)
         }
 

@@ -25,6 +25,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_usuario_remitente"
                     android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:gravity="end"
@@ -33,6 +34,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_contenido_remitente"
                     android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:gravity="end"
@@ -43,6 +45,7 @@
             <ImageView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
+                android:layout_marginEnd="80dp"
                 android:src="@drawable/foto_de_perfil_" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

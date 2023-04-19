@@ -57,6 +57,13 @@
         <activity
             android:name=".RegistroActivity"
             android:exported="false" />
+        <activity
+            android:name=".ActivityMensajes"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityTarea"
+            android:exported="false" />
+
     </application>
 
 </manifest>

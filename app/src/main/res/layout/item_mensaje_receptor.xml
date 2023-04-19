@@ -30,6 +30,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_usuario_receptor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Nombre del remitente"
@@ -37,6 +38,7 @@
                     android:textColor="@android:color/white"/>
 
                 <TextView
+                    android:id="@+id/tv_contenido_receptor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Mensaje del remitente"
