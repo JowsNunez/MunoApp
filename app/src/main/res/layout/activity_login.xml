@@ -7,8 +7,8 @@
     android:background="@drawable/fondo_bienvenido"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <ImageButton
+        android:id="@+id/btn_regresar"
         android:layout_width="30dp"
         android:layout_height="37dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,6 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.021"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/regresar_blanco_" />
 
     <TextView
@@ -106,6 +108,7 @@
 
 
             <Button
+                android:id="@+id/btn_iniciar"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
