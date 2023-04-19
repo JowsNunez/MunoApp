@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
@@ -7,13 +7,11 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:background="@drawable/dialog_round"
-    android:elevation="10dp"
-    >
+    android:elevation="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_gravity="center"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
@@ -24,7 +22,7 @@
         android:padding="10dp">
 
         <ImageButton
-            android:id="@+id/button_close_adjuntar"
+            android:id="@+id/button_close_proyect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -66,20 +64,13 @@
             android:paddingBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="160dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:labelFor="@+id/txt_descripcion"
-                android:text="Nombre Archivo"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="140dp"
-                tools:layout_editor_absoluteY="16dp" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:padding="10dp">
 
             <ImageButton
                 android:id="@+id/adjuntar_archivo"
@@ -92,28 +83,40 @@
                 app:layout_constraintVertical_bias="0.238"
                 app:srcCompat="@drawable/adjuntar_xxxhdpi" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:labelFor="@+id/txt_descripcion"
-                android:text="Peso Mb"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="195dp"
-                tools:layout_editor_absoluteY="49dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/txt_nombre_archivo"
+                    android:text="Nombre Archivo"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="140dp"
+                    tools:layout_editor_absoluteY="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/txt_PesoMb"
+                    android:text="Peso Mb"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="195dp"
+                    tools:layout_editor_absoluteY="49dp" />
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/button_add_archivo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:width="200dp"
-                android:radius="50dip"
-                android:text="Aceptar"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="35dp"
-                tools:layout_editor_absoluteY="116dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+        </LinearLayout>
+        <Button
+            android:id="@+id/button_add_proyecto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:width="200dp"
+            android:radius="50dip"
+            android:text="Aceptar"
+            tools:layout_editor_absoluteX="35dp"
+            tools:layout_editor_absoluteY="116dp"
+            tools:ignore="MissingConstraints" />
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
