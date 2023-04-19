@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal">
+
+    <!-- Solo es el Modelo -->
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/card_viewRAR"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        card_view:cardCornerRadius="20dp"
+        card_view:cardElevation="5dp"
+        card_view:cardMaxElevation="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/item_imagenRAR"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/formato_rar_"
+                android:src="@drawable/formato_rar_"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:layout_marginStart="20dp"
+                >
+                <TextView
+                    android:id="@+id/tituloRAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Archivo" />
+                <TextView
+                    android:id="@+id/Peso_RAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Peso Mb"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <!---      Termina el modelooo -->
+
+    <!-- Solo es el Modelo -->
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/card_viewIMG"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        card_view:cardCornerRadius="20dp"
+        card_view:cardElevation="5dp"
+        card_view:cardMaxElevation="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/item_imagenIMG"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/formato_rar_"
+                android:src="@drawable/formato_imagen_" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:layout_marginStart="20dp"
+                >
+                <TextView
+                    android:id="@+id/tituloIMG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Archivo" />
+                <TextView
+                    android:id="@+id/Peso_IMG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Peso Mb"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <!---      Termina el modelooo -->
+
+    <!-- Solo es el Modelo -->
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/card_viewAI"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        card_view:cardCornerRadius="20dp"
+        card_view:cardElevation="5dp"
+        card_view:cardMaxElevation="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/item_imagenAI"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/formato_rar_"
+                android:src="@drawable/formato_ai_" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:layout_marginStart="20dp"
+                >
+                <TextView
+                    android:id="@+id/tituloAI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Archivo" />
+                <TextView
+                    android:id="@+id/Peso_IA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Peso Mb"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <!---      Termina el modelooo -->
+
+    <!-- Solo es el Modelo -->
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        card_view:cardCornerRadius="20dp"
+        card_view:cardElevation="5dp"
+        card_view:cardMaxElevation="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/item_imagenPS"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/formato_rar_"
+                android:src="@drawable/formato_ps_" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:layout_marginStart="20dp"
+                >
+                <TextView
+                    android:id="@+id/titulo_PS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Archivo" />
+                <TextView
+                    android:id="@+id/Peso_PS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Peso Mb"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <!---      Termina el modelooo -->
+
+</LinearLayout>
