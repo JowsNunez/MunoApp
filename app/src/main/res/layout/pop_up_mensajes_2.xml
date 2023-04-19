@@ -35,8 +35,6 @@
             android:textColor="@color/gray"
             android:textSize="13dp"
             />
-
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,25 +43,22 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:layout_marginStart="70dp"
             android:id="@+id/fotografia_img"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            app:srcCompat="@drawable/tomar_foto"
-            android:layout_gravity="center"/>
-
+            android:layout_gravity="center"
+            android:layout_marginStart="70dp"
+            app:srcCompat="@drawable/otros_" />
         <Button
             android:id="@+id/button_otros"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
-
             android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:text="Otros"
             android:textColor="@color/gray"
             android:textSize="13dp"
             />
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
