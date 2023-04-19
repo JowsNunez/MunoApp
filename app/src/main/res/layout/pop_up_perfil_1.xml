@@ -71,7 +71,7 @@
             android:id="@+id/archivo_img"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            app:srcCompat="@drawable/adjuntar_arichivo_redondo"
+            app:srcCompat="@drawable/ver_foto_"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="48dp"
             tools:layout_editor_absoluteY="6dp" />
@@ -82,7 +82,7 @@
             android:layout_height="39dp"
             android:layout_marginStart="58dp"
             android:background="@android:color/transparent"
-            android:text="Ver almacenamiento interno"
+            android:text="Ver fotografia"
             android:textColor="@color/gray"
             android:textSize="13dp"
             app:layout_constraintEnd_toEndOf="parent"
