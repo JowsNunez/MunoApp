@@ -3,6 +3,8 @@ package com.proyecto.munoapp.ui.almacenamiento
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
+import android.view.Gravity
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
@@ -26,5 +28,12 @@ class AdjuntarArchivoDialog:DialogFragment() {
 
 
         return builder.create()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val window = dialog?.window
+        window?.setGravity(Gravity.BOTTOM)
+        window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT)
     }
 }
