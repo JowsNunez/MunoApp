@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.proyecto.munoapp.databinding.ActivityMainBinding
+import com.proyecto.munoapp.util.AutenticacionManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +33,8 @@ class MainActivity : AppCompatActivity() {
                R.id.navigation_tareas,   R.id.navigation_proyecto,R.id.navigation_mensaje, R.id.navigation_notificacion, R.id.navigation_almacenamiento
             )
         )
+        AutenticacionManager.verificarSesionInactivaFirebase(this,LoginActivity::class.java);
+
 
         val buttonConfig = binding.btnConfig
         val img = binding.imgUser
@@ -44,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         img.setOnClickListener {
             val intent: Intent = Intent(this, PerfilActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         navView.setupWithNavController(navController)

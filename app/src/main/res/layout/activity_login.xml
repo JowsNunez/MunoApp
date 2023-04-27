@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_bienvenido"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    >
 
     <ImageButton
         android:id="@+id/btn_regresar"
@@ -97,6 +98,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtfield_contrasena"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -162,12 +164,14 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/btn_facebook"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:src="@drawable/facebook_" />
 
                 <ImageView
+                    android:id="@+id/btn_google"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
@@ -175,6 +179,7 @@
                     android:src="@drawable/google_" />
 
                 <ImageView
+                    android:id="@+id/btn_twitter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.proyecto.munoapp.databinding.ActivityRegistroBinding
+import com.proyecto.munoapp.util.AutenticacionManager
 
 class RegistroActivity: AppCompatActivity() {
     private lateinit var binding: ActivityRegistroBinding
@@ -13,11 +14,14 @@ class RegistroActivity: AppCompatActivity() {
         binding=ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         var tv_iniciar = binding.tvIniciar
+        AutenticacionManager.verificarSesionActivaFirebase(this,MainActivity::class.java)
 
         tv_iniciar.setOnClickListener {
-            var intent =  Intent(this,LoginActivity::class.java)
+            val intent =  Intent(this,LoginActivity::class.java)
             startActivity(intent)
+            finish()
 
 
         }

@@ -11,8 +11,15 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="android:fontFamily">@font/poppins</item>
         <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/violeta</item>
+
+    </style>
+
+    <style name="Theme.BlueBar" parent="@style/Theme.MunoApp">
+        <item name="windowActionBar">false</item>
+        <item name="android:statusBarColor">@color/blue</item>
+
     </style>
 </resources>
