@@ -52,6 +52,7 @@
             android:translationZ="5dp" />
 
         <TextView
+            android:id="@+id/user_name"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -204,6 +205,25 @@
                         android:layout_gravity="center"/>
 
                 </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/btn_signOut"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/icon_sign_out"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sign out"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
 
 
 
@@ -213,14 +233,15 @@
 
 
     <View
-        android:layout_width="500dp"
-        android:layout_height="560dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="300dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="600dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/corner_top"
         android:elevation="5dp"
-        android:translationZ="-4dp"/>
+        android:translationZ="-4dp" />
 
 
 </RelativeLayout>
