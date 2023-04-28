@@ -12,6 +12,9 @@
         android:theme="@style/Theme.MunoApp"
         tools:targetApi="31">
         <activity
+            android:name=".AvatarActivity"
+            android:exported="false" />
+        <activity
             android:name=".PerfilActivity"
             android:exported="false" />
         <activity
@@ -36,10 +39,10 @@
             android:name=".ConfigActivity"
             android:exported="false" />
         <activity
-            android:theme="@style/Theme.BlueBar"
             android:name=".MainActivity"
             android:exported="false"
-            android:label="@string/title_activity_main" />
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.BlueBar" />
         <activity
             android:name=".PortafolioActivity"
             android:exported="false" />
@@ -53,20 +56,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:theme="@style/Theme.BlueBar"
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.BlueBar" />
         <activity
-            android:theme="@style/Theme.BlueBar"
             android:name=".RegistroActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.BlueBar" />
         <activity
             android:name=".ActivityMensajes"
             android:exported="false" />
         <activity
             android:name=".ActivityTarea"
             android:exported="false" />
-
     </application>
 
 </manifest>
