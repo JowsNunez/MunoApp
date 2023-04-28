@@ -3,22 +3,26 @@ package com.proyecto.munoapp.ui.proyecto
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.proyecto.munoapp.model.ProyectoItem
 
 class ProyectoViewModel : ViewModel() {
-    private val items: List<ProyectoItem> = cargarProyectos() as List<ProyectoItem>
+    private val items: MutableLiveData<List<ProyectoItem>> = MutableLiveData(emptyList())
 
+    private val storage: FirebaseFirestore = FirebaseFirestore.getInstance()
+    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     fun getProyects(): LiveData<List<ProyectoItem>> {
+        cargarProyectos()
         return MutableLiveData<List<ProyectoItem>>().apply {
-            value = items
+            value = items.value
         }
     }
 
-    private fun cargarProyectos(): List<ProyectoItem> {
+    private fun cargarProyectos() {
         val proyectos = mutableListOf<ProyectoItem>()
-        for (i in 1..10) {
-            proyectos.add(ProyectoItem("Proyecto $i", "Descripción $i", i))
-        }
-        return proyectos
+
+
+
     }
 }

@@ -10,12 +10,19 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.proyecto.munoapp.databinding.ActivityMainBinding
 import com.proyecto.munoapp.util.AutenticacionManager
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var storage: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,10 +41,29 @@ class MainActivity : AppCompatActivity() {
             )
         )
         AutenticacionManager.verificarSesionInactivaFirebase(this,LoginActivity::class.java);
+        auth = Firebase.auth
+        storage = FirebaseFirestore.getInstance()
+
 
 
         val buttonConfig = binding.btnConfig
         val img = binding.imgUser
+        val textUser = binding.txtUserName
+
+
+        storage.collection("users").whereEqualTo("email",auth.currentUser?.email)
+            .get().addOnCompleteListener {  task->
+                if(task.isSuccessful){
+                    val document = task.result
+
+                    if(!document.isEmpty){
+
+                      textUser.text=  document.documents[0].data?.get("nombre").toString()
+
+                    }
+                }
+        }
+
 
         buttonConfig.setOnClickListener{
             val intent: Intent = Intent(this, ConfigActivity::class.java)

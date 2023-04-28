@@ -14,16 +14,21 @@ class ActivityProyecto : AppCompatActivity() {
         binding = ActivityProyectoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val extras =intent.extras
 
+        val titulo =extras?.getString("titulo")
         val btn_config = binding.btnConfig
 
         val btn_regresar = binding.btnRegresar
+        val txtProyectoNombre=binding.txtProyectoNombre
 
         val ll_checkList=binding.llChecklist
 
         val ll_sala=binding.llSala
 
         // Listeners para abrir activities
+
+        txtProyectoNombre.text=titulo
 
         btn_config.setOnClickListener {
             var intent:Intent = Intent(this,ActivityConfigProyecto::class.java)
