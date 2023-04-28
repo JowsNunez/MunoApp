@@ -16,12 +16,12 @@
             android:id="@+id/btn_regresar"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="36dp"
             android:background="@android:color/transparent"
             android:scaleType="centerCrop"
             android:src="@drawable/regresar_blanco"
             app:layout_constraintEnd_toStartOf="@+id/img_proyecto"
-            app:layout_constraintHorizontal_bias="0.518"
+            app:layout_constraintHorizontal_bias="0.555"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
