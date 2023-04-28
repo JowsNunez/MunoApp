@@ -36,6 +36,7 @@
             android:name=".ConfigActivity"
             android:exported="false" />
         <activity
+            android:theme="@style/Theme.BlueBar"
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main" />
@@ -52,11 +53,20 @@
             </intent-filter>
         </activity>
         <activity
+            android:theme="@style/Theme.BlueBar"
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:theme="@style/Theme.BlueBar"
             android:name=".RegistroActivity"
             android:exported="false" />
+        <activity
+            android:name=".ActivityMensajes"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityTarea"
+            android:exported="false" />
+
     </application>
 
 </manifest>

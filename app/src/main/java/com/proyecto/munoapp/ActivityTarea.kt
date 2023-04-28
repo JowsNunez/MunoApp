@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.proyecto.munoapp.databinding.ActivityProyectoBinding
 
 
-class ActivityProyecto : AppCompatActivity() {
+class ActivityTarea : AppCompatActivity() {
     private lateinit var binding:ActivityProyectoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,13 +14,10 @@ class ActivityProyecto : AppCompatActivity() {
         binding = ActivityProyectoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val extras =intent.extras
 
-        val titulo =extras?.getString("titulo")
         val btn_config = binding.btnConfig
 
         val btn_regresar = binding.btnRegresar
-        val txtProyectoNombre=binding.txtProyectoNombre
 
         val ll_checkList=binding.llChecklist
 
@@ -28,10 +25,8 @@ class ActivityProyecto : AppCompatActivity() {
 
         // Listeners para abrir activities
 
-        txtProyectoNombre.text=titulo
-
         btn_config.setOnClickListener {
-            var intent:Intent = Intent(this,ActivityConfigProyecto::class.java)
+            var intent:Intent = Intent(this,ActivityConfigTarea::class.java)
             startActivity(intent)
         }
         ll_checkList.setOnClickListener{

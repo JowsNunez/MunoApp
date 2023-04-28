@@ -22,7 +22,7 @@
         android:padding="10dp">
 
         <ImageButton
-            android:id="@+id/button_close_proyect"
+            android:id="@+id/button_close_adjuntar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -108,7 +108,7 @@
 
         </LinearLayout>
         <Button
-            android:id="@+id/button_add_proyecto"
+            android:id="@+id/button_add_archivo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
