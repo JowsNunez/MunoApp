@@ -53,17 +53,8 @@ class RegistroActivity: AppCompatActivity() {
 
                 if (contra1 == contra2) {
 
-                    registrarFirebase(correo, contra1)
-                    storage.collection("users").document().set(
-                        hashMapOf(
-                           "uid" to auth.currentUser?.uid,
-                            "nombre" to nombre,
-                            "email" to correo,
-                            "estado" to "",
-                            "imagen" to "",
-                            "telefono" to ""
-                        )
-                    )
+                    registrarFirebase(correo, contra1,nombre)
+
 
                 } else {
                     Toast.makeText(
@@ -82,7 +73,7 @@ class RegistroActivity: AppCompatActivity() {
     }
 
 
-    private fun registrarFirebase(email: String, password: String) {
+    private fun registrarFirebase(email: String, password: String,nombre:String) {
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
@@ -91,7 +82,16 @@ class RegistroActivity: AppCompatActivity() {
                     //Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
 
-
+                    storage.collection("users").document().set(
+                        hashMapOf(
+                            "uid" to auth.currentUser?.uid,
+                            "nombre" to nombre,
+                            "email" to email,
+                            "estado" to "",
+                            "imagen" to "",
+                            "telefono" to ""
+                        )
+                    )
 
                     Toast.makeText(
                         baseContext, "${user?.email} se ha creado correctamente",
