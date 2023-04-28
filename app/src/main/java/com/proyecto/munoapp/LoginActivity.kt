@@ -14,6 +14,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.proyecto.munoapp.util.AutenticacionManager
 
@@ -24,6 +25,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var storage: FirebaseFirestore
+
     companion object {
         private const val TAG = "GoogleActivity"
         private const val RC_SIGN_IN = 9001
@@ -42,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
         auth = Firebase.auth
+        storage= FirebaseFirestore.getInstance()
 
         AutenticacionManager.verificarSesionActivaFirebase(this,MainActivity::class.java)
 
@@ -84,6 +88,7 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
 
                     val user = auth.currentUser
+
                     val intent: Intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("user",user)
                     startActivity(intent)
@@ -131,6 +136,39 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
                     val user = auth.currentUser
+
+                    val userDocRef = storage.collection("users").document(user?.uid ?: "")
+
+                    userDocRef.get()
+                        .addOnCompleteListener { task ->
+                           if(task.isSuccessful){
+                                val document = task.result
+
+                               if(!document.exists()){
+
+                                   userDocRef.set(
+                                       hashMapOf(
+                                           "uid" to auth.currentUser?.uid,
+                                           "nombre" to auth.currentUser?.displayName,
+                                           "email" to auth.currentUser?.email,
+                                           "estado" to "",
+                                           "imagen" to "",
+                                           "telefono" to ""
+                                       )).addOnCompleteListener{task->
+                                       if(task.isSuccessful) {
+                                           Toast.makeText(
+                                               this,
+                                               "Se creo nuevo usuario ${auth.currentUser?.email}",
+                                               Toast.LENGTH_SHORT
+                                           ).show()
+                                       }
+                                   }
+                               }
+                           }
+
+                        }
+
+
                     val intent: Intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("user",user)
                     startActivity(intent)

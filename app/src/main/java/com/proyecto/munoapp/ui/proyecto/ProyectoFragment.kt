@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,17 +14,30 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.GridView
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.lifecycle.ViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.proyecto.munoapp.ActivityProyecto
 import com.proyecto.munoapp.R
 import com.proyecto.munoapp.databinding.FragmentProyectoBinding
 import com.proyecto.munoapp.model.ProyectoItem
+import com.proyecto.munoapp.model.TareaItem
+import com.proyecto.munoapp.ui.tarea.TareaFragment
+import com.proyecto.munoapp.util.DialogListener
 
-class ProyectoFragment : Fragment() {
+class ProyectoFragment : Fragment(),DialogListener {
 
     private var _binding: FragmentProyectoBinding? = null
+    private lateinit var storage: FirebaseFirestore
+
+    private lateinit var auth: FirebaseAuth
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -40,19 +54,23 @@ class ProyectoFragment : Fragment() {
         _binding = FragmentProyectoBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        auth= Firebase.auth
+        storage = FirebaseFirestore.getInstance()
+
 
         val gridProyecto: GridView = binding.gridProyecto
 
 
 
 
-        gridProyecto.adapter = cargar(root.context,proyectoViewModel)
+        cargar(root.context,gridProyecto)
 
 
         var buttonAdd:ImageButton = _binding!!.buttonAdd
 
         buttonAdd.setOnClickListener {
             val proyectoDialog = ProyectoDialog(root.context)
+            proyectoDialog.setOnDismissListener(this)
             proyectoDialog.show(parentFragmentManager,"ProyectoDialog")
         }
 
@@ -67,15 +85,27 @@ class ProyectoFragment : Fragment() {
         _binding = null
     }
 
-    private fun cargar(context: Context, view:ProyectoViewModel):ProyectoAdapter{
+    private fun cargar(context: Context, view:GridView) {
 
-        var items: ArrayList<ProyectoItem>? = view.getProyects().value as ArrayList<ProyectoItem>
+        var proyectos: ArrayList<ProyectoItem> = ArrayList()
 
-        if(items!=null){
-            return ProyectoAdapter(context, items)
+
+        val email =  auth.currentUser?.email.toString()
+        val docRef= storage.collection("proyectos").whereArrayContains("miembros", hashMapOf("email" to email))
+
+
+        docRef.get().addOnCompleteListener { task ->
+            if(task.isSuccessful){
+                for (document in task.result) {
+                    Log.d("",document.data.toString())
+                    proyectos.add(ProyectoItem(document.data.get("titulo").toString(),document.data.get("descripcion").toString(),1))
+                }
+
+                view.adapter=ProyectoAdapter(context,proyectos)
+            }
         }
 
-       return ProyectoAdapter(context, ArrayList())
+
     }
 
     private class ProyectoAdapter: BaseAdapter{
@@ -109,8 +139,11 @@ class ProyectoFragment : Fragment() {
 
             var txtTitulo: TextView = vista.findViewById(R.id.proyect_titulo)
             var txtDescripcion: TextView = vista.findViewById(R.id.proyect_decripcion)
-            txtTitulo.setOnClickListener {
+            var cardProyecto:LinearLayout = vista.findViewById(R.id.contenido_proyecto)
+
+            cardProyecto.setOnClickListener {
                 var intento = Intent(contexto, ActivityProyecto::class.java)
+                intento.putExtra("titulo",item.titulo)
                 // TODO: agregar los detalles del proyecto seleccionado
                 contexto!!.startActivity(intento)
             }
@@ -125,6 +158,10 @@ class ProyectoFragment : Fragment() {
         }
 
 
+    }
+
+    override fun onDismis() {
+        cargar(binding.root.context,binding.gridProyecto)
     }
 
 }

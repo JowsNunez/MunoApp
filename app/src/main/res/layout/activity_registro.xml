@@ -162,6 +162,18 @@
             android:background="@drawable/spinner_border" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/txt_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox"
+        app:layout_constraintVertical_bias="0.449" />
+
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
@@ -176,6 +188,7 @@
         tools:ignore="MissingConstraints" />
 
     <View
+        android:id="@+id/view"
         android:layout_width="300dp"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
@@ -191,13 +204,13 @@
         android:id="@+id/tv_iniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="20dp"
         android:labelFor="@+id/txt_C_contrasena"
         android:text="¿Ya tienes una cuenta?"
         android:textColor="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 

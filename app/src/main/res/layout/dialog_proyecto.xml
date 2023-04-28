@@ -51,7 +51,7 @@
         android:text="Descripcion"
         />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
         android:id="@+id/txt_descripcion"
         android:maxHeight="300dp"
         android:layout_width="match_parent"
