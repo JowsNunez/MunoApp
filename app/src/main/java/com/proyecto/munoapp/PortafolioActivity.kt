@@ -1,6 +1,7 @@
 package com.proyecto.munoapp
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,10 +23,17 @@ class PortafolioActivity : AppCompatActivity() {
         setContentView(R.layout.activity_portafolio)
         var gridView:GridView = findViewById(R.id.portafolio_items)
         var btn_regresar:ImageButton = findViewById(R.id.btn_regresar_portafolio)
+        var btnAgregar:ImageButton = findViewById(R.id.btn_agregar_elemento)
 
         btn_regresar.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
             finish()
+        }
+
+
+        btnAgregar.setOnClickListener {
+            val intent: Intent = Intent(this,AddPortafolio::class.java)
+            startActivity(intent)
         }
 
 

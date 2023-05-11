@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,12 @@ import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageButton
 import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.proyecto.munoapp.ActivityTarea
 import com.proyecto.munoapp.R
 import com.proyecto.munoapp.databinding.FragmentProyectoBinding
@@ -20,9 +27,12 @@ import com.proyecto.munoapp.model.TareaItem
 import com.proyecto.munoapp.ui.notificacion.NotificacionViewModel
 import com.proyecto.munoapp.ui.proyecto.ProyectoDialog
 import com.proyecto.munoapp.ui.proyecto.ProyectoViewModel
+import com.proyecto.munoapp.util.DialogListener
 
-class TareaFragment : Fragment() {
+class TareaFragment : Fragment() , DialogListener{
     private var _binding: FragmentTareaBinding? = null
+    private lateinit var storage: FirebaseFirestore
+    private lateinit var auth: FirebaseAuth
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -35,6 +45,8 @@ class TareaFragment : Fragment() {
     ): View {
         val tareaViewModel =
             ViewModelProvider(this).get(TareaViewModel::class.java)
+        storage= FirebaseFirestore.getInstance()
+        auth=Firebase.auth
 
         _binding = FragmentTareaBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -45,14 +57,15 @@ class TareaFragment : Fragment() {
 
 
 
-        gridProyecto.adapter = cargar(root.context,tareaViewModel)
+         cargar(root.context,gridProyecto)
 
 
         var buttonAdd: ImageButton = _binding!!.buttonAdd
 
         buttonAdd.setOnClickListener {
-            val proyectoDialog = ProyectoDialog(root.context)
-            proyectoDialog.show(parentFragmentManager,"ProyectoDialog")
+            val tareaDialog = TareaDialog(root.context)
+            tareaDialog.setOnDismissListener(this)
+            tareaDialog.show(parentFragmentManager,"TareaDialog")
         }
 
         return root
@@ -66,15 +79,26 @@ class TareaFragment : Fragment() {
         _binding = null
     }
 
-    private fun cargar(context: Context, view: TareaViewModel):TareaAdapter{
+    private fun cargar(context: Context, view: GridView){
+        var items: ArrayList<TareaItem> = ArrayList()
 
-        var items: ArrayList<TareaItem>? = view.getTareas().value as ArrayList<TareaItem>
+        val email =  auth.currentUser?.email.toString()
+        val docRef= storage.collection("tareas").whereEqualTo("email", email)
 
-        if(items!=null){
-            return TareaAdapter(context, items)
+        docRef.get().addOnCompleteListener { task ->
+            if(task.isSuccessful){
+                for (document in task.result) {
+                    items.add(TareaItem(document.data.get("titulo").toString(),document.data.get("descripcion").toString()))
+                }
+                if(items.isNotEmpty()){
+                   view.adapter =TareaAdapter(context, items)
+                }
+
+            }
         }
 
-        return TareaAdapter(context, ArrayList())
+
+
     }
 
     private class TareaAdapter: BaseAdapter {
@@ -124,6 +148,10 @@ class TareaFragment : Fragment() {
         }
 
 
+    }
+
+    override fun onDismis() {
+        this.cargar(binding.root.context,binding.gridProyecto)
     }
 
 }

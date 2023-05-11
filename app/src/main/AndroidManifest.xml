@@ -12,6 +12,9 @@
         android:theme="@style/Theme.MunoApp"
         tools:targetApi="31">
         <activity
+            android:name=".AddPortafolio"
+            android:exported="false" />
+        <activity
             android:name=".AvatarActivity"
             android:exported="false" />
         <activity

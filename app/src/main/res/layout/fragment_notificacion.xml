@@ -6,12 +6,12 @@
     tools:context=".ui.notificacion.NotificacionFragment"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_notification"
+    <GridView
+        android:id="@+id/gv_notificacion"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:textAlignment="center"/>
+        android:padding="10dp"
+        />
 
 
 </LinearLayout>

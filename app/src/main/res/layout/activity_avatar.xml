@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AvatarActivity">
-    <?xml version="1.0" encoding="utf-8"?>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:r="8dp">
+                >
 
                 <TextView
                     android:id="@+id/description_text"

@@ -21,15 +21,19 @@ import androidx.lifecycle.ViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.proyecto.munoapp.ActivityProyecto
 import com.proyecto.munoapp.R
 import com.proyecto.munoapp.databinding.FragmentProyectoBinding
+import com.proyecto.munoapp.model.MiembroItem
 import com.proyecto.munoapp.model.ProyectoItem
 import com.proyecto.munoapp.model.TareaItem
 import com.proyecto.munoapp.ui.tarea.TareaFragment
 import com.proyecto.munoapp.util.DialogListener
+import java.util.*
+import kotlin.collections.ArrayList
 
 class ProyectoFragment : Fragment(),DialogListener {
 
@@ -150,7 +154,7 @@ class ProyectoFragment : Fragment(),DialogListener {
 
 
             txtTitulo.text=item.titulo
-            txtDescripcion.text=item.decripcion
+            txtDescripcion.text=item.descripcion
 
             return vista
 

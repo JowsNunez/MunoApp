@@ -6,12 +6,13 @@
     tools:context=".ui.mensaje.MensajeFragment"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_mensaje"
+    <GridView
+        android:id="@+id/gv_mensajes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:textAlignment="center"/>
+        android:padding="10dp"
+
+        />
 
 
 </LinearLayout>
